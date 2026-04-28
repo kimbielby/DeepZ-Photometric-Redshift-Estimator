@@ -1,0 +1,10 @@
+{
+  "model": "model2",
+  "best_epoch": 53,
+  "val_sigma_nmad": 0.015077088955411993,
+  "sigma_nmad": 0.015117852860167457,
+  "bias": 0.007960753881214207,
+  "outlier_rate": 0.006358177322500883,
+  "crps": 1.1288436651229858,
+  "notes": "Weighted sampling (1/sqrt(count)), label_sigma_bins=2, sampling_weight_power=0.5, trained epochs 0-68 (early stopping)"
+}

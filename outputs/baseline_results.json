@@ -1,0 +1,10 @@
+{
+  "model": "baseline",
+  "best_epoch": 57,
+  "val_sigma_nmad": 0.012580733043594007,
+  "sigma_nmad": 0.01259213836113188,
+  "bias": 0.00021464447351120402,
+  "outlier_rate": 0.007005769457200047,
+  "crps": 0.9070009589195251,
+  "notes": "No weighted sampling, hard labels (label_sigma_bins=0), sampling_weight_power=0.0, trained epochs 0-67 (early stopping)"
+}

@@ -1,0 +1,51 @@
+# pzest - Photometric Redshift Estimation configuration
+# Model 3 configuration - archived reference only
+# Trained: [26/4/2026]
+# Best epoch: 76, best val sigma_NMAD: 0.0144
+# Do not modify - use default.yaml for active training
+
+paths:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  processed_hdf5_file: data/processed/processed.hdf5
+  splits_file: data/splits.csv
+  checkpoints_dir: outputs/checkpoints
+  best_checkpoint: outputs/checkpoints/best_checkpoint.pt
+  figures: outputs/figures
+
+data:
+  hdf5_filename: DESI_HSC_64x64_v2.hdf5
+  chunk_size: 500
+  val_fraction: 0.15
+  test_fraction: 0.15
+  random_seed: 42
+  include_psf: false
+
+model:
+  backbone: inception
+  use_magnitudes: true
+  magnitude_hidden_dim: 32
+  num_bins: 200
+  # Redshift range based on dataset. Only change if targeting a specific range
+  redshift_min: 0.0
+  redshift_max: 4.0
+
+train:
+  epochs: 200
+  batch_size: 128
+  learning_rate: 1.0e-4
+  patience: 15
+  loss_function: crps
+  use_weighted_sampling: true
+  sampling_weight_power: 0.3    # 0=no weighting, 0.3=1/count^0.3 (soft), 0.5=1/sqrt(count), 1.0=1/count
+  label_sigma_bins: 2
+  lr_scheduler:
+    enabled: true
+    factor: 0.5
+    patience: 5
+    min_lr: 1.0e-6
+  num_workers: 0        # 0 is best for Windows, increase for Linux/macOS if needed
+
+
+evaluation:
+  num_vis_samples: 8

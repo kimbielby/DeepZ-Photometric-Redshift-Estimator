@@ -1,0 +1,18 @@
+name: pzest
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - pip:
+      - torch --index-url https://download.pytorch.org/whl/cu128
+      - torchvision --index-url https://download.pytorch.org/whl/cu128
+      - h5py
+      - numpy
+      - pyyaml
+      - matplotlib
+      - pandas
+      - tqdm
+      - pytest
+      - jupyter
+      - ipykernel

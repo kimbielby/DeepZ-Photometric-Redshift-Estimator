@@ -1,0 +1,30 @@
+# IDE
+/.idea/
+/.vscode/
+
+# Data - keep directory structure only
+/data/raw/*
+!/data/raw/.gitkeep
+/data/processed/*
+!/data/processed/.gitkeep
+/data/splits.csv
+
+# Outputs - only exclude checkpoints, not figures or results
+/outputs/checkpoints/*
+!/outputs/checkpoints/.gitkeep
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+*pyo
+.eggs/
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env

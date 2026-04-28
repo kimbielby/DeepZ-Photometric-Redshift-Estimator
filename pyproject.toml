@@ -1,0 +1,13 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pzest"
+version = "0.1.0"
+description = "Photometric redshift estimation from HSC galaxy images using a custom Inception CNN"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.hatch.build.targets.wheel]
+packages = ["pzest"]
